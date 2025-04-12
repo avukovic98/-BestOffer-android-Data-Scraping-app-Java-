@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/main_menu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/yellow"
+        tools:context=".MainActivity">
+
+
+        <Button
+            android:id="@+id/leftPage2"
+            android:layout_width="59dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+
+            android:layout_marginEnd="1dp"
+            android:text="DESC"
+            app:layout_constraintEnd_toStartOf="@+id/leftPage"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+        <Button
+            android:id="@+id/leftPage"
+            android:layout_width="51dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+
+            android:layout_marginEnd="1dp"
+            android:text="ASC"
+            app:layout_constraintEnd_toStartOf="@+id/LeftPage"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/rv_item"
+            android:layout_width="match_parent"
+
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/page"
+            tools:layout_editor_absoluteX="2dp" />
+
+
+        <Button
+            android:id="@+id/RightPage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:text="&gt;"
+            app:layout_constraintStart_toEndOf="@+id/page"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+        <Button
+            android:id="@+id/LeftPage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+
+            android:text="&lt;"
+            app:layout_constraintEnd_toStartOf="@+id/page"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+        <TextView
+            android:id="@+id/page"
+            android:layout_width="47dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="20dp"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:backgroundTint="@color/white"
+            app:cardElevation="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/cardview_shadow_start_color"
+            app:strokeWidth="5dp"
+            tools:layout_editor_absoluteX="7dp">
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+
+                android:layout_marginTop="0dp"
+
+
+                android:background="#ededed"
+                android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+                tools:layout_editor_absoluteX="0dp"></SearchView>
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="sort"
+            app:layout_constraintStart_toEndOf="@+id/RightPage"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
